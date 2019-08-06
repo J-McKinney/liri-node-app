@@ -2,9 +2,9 @@
 require("dotenv").config();
 
 //variables
-var keys = require("./keys.js");
-// var spotify = new spotify(keys.spotify);
-// var Spotify = require("node-spotify-api");
+var keys = require("./keys");
+var spotify = new spotify(keys.spotify);
+var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var fs = require("fs");
 var moment = require("moment");
@@ -55,7 +55,7 @@ function movieInfo(userParameter) {
     }
     axios.get("http://www.omdbapi.com/?t=" + userParameter + "&y=&plot=short&apikey=trilogy").then(function (response) {
         var movieResults =
-            "======================" +
+            "\n======================" +
             "\nMovie Title: " + response.data.Title +
             "\nYear of Release: " + response.data.Year +
             "\nIMDB Rating: " + response.data.imdbRating +
@@ -65,7 +65,7 @@ function movieInfo(userParameter) {
             "\nPlot: " + response.data.Plot +
             "\nActors/Actresses: " + response.data.Actors;
         console.log(movieResults);
-        fs.appendFileSync("log.txt", "===================");
+        fs.appendFileSync("log.txt", "\n===================");
         fs.appendFileSync("log.txt", movieResults);
     })
         .catch(function (error) {
@@ -82,15 +82,36 @@ function concertInfo(userParameter) {
         // var data = response.data;
         for (var i = 0; i < response.data.length; i++) {
             var concertResults =
-                "===========================" +
+                "\n===========================" +
                 "\nVenue Name: " + response.data[i].venue.name +
                 "\nVenue Location: " + response.data[i].venue.city +
                 "\nDate of the Event: " + response.data[i].datetime;
             console.log(concertResults);
-            fs.appendFileSync("log.txt", "===================");
+            fs.appendFileSync("log.txt", "\n===================");
             fs.appendFileSync("log.txt", concertResults);
         }
     }).catch(function (error) {
         console.log(error);
     })
+}
+
+function songInfo(userParameter) {
+    if(!value){
+        value = "The Sign";
+    }
+    spotify.search({ type: 'track', query: userParameter }).then(function(response) {
+        for (var i = 0; i < 5; i++) {
+            var spotifyResults = 
+                "\n===================================" +
+                    "\nArtist(s): " + response.tracks.items[i].artists[0].name + 
+                    "\nSong Name: " + response.tracks.items[i].name +
+                    "\nAlbum Name: " + response.tracks.items[i].album.name +
+                    "\nPreview Link: " + response.tracks.items[i].preview_url;
+                    
+            console.log(spotifyResults);
+        }
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
 }
