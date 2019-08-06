@@ -10,18 +10,20 @@ var fs = require("fs");
 var moment = require("moment");
 moment().format();
 var userOption = process.argv[2];
-var nodeArgs = process.argv;
-var userParameter = "";
-for (var i = 2; i < nodeArgs.length; i++) {
-    if (i > 2 && i < nodeArgs.length) {
-        userParameter = userParameter + "+" + nodeArgs[i];
-    }
-}
+var userParameter = process.argv[3];
+// var nodeArgs = process.argv;
+// var userParameter = "";
+// for (var i = 2; i < nodeArgs.length; i++) {
+//     if (i > 2 && i < nodeArgs.length) {
+//         userParameter = userParameter +"+"+ nodeArgs[i];
+//     }
+// }
 
 userInput(userOption, userParameter);
 
 //Switch statement
 function userInput(userOption, userParameter) {
+    console.log(userParameter);
     switch (userOption) {
         case "concert-this":
             concertInfo(userParameter);
@@ -41,6 +43,13 @@ function userInput(userOption, userParameter) {
 }
 //movie function
 function movieInfo(userParameter) {
+    var nodeArgs = process.argv;
+    userParameter = "";
+    for (var i = 2; i < nodeArgs.length; i++) {
+        if (i > 2 && i < nodeArgs.length) {
+            userParameter = userParameter + "+" + nodeArgs[i];
+        }
+    }
     if (!userParameter) {
         userParameter = "Mr.Nobody";
     }
@@ -66,9 +75,11 @@ function movieInfo(userParameter) {
 //concert function
 function concertInfo(userParameter) {
     if (!userParameter) {
-        userParameter = "ace of base"
+        userParameter = "guns n' roses";
     }
+    // var queryURL = ("https://rest.bandsintown.com/artists/" + userParameter + "/events?app_id=codingbootcamp");
     axios.get("https://rest.bandsintown.com/artists/" + userParameter + "/events?app_id=codingbootcamp").then(function (response) {
+        // var data = response.data;
         for (var i = 0; i < response.data.length; i++) {
             var concertResults =
                 "===========================" +
@@ -79,8 +90,7 @@ function concertInfo(userParameter) {
             fs.appendFileSync("log.txt", "===================");
             fs.appendFileSync("log.txt", concertResults);
         }
-    })
-    .catch(function (error) {
+    }).catch(function (error) {
         console.log(error);
-    });
+    })
 }
