@@ -7,21 +7,20 @@ var keys = require("./keys.js");
 // var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var fs = require("fs");
+var moment = require("moment");
+moment().format();
 var userOption = process.argv[2];
 var nodeArgs = process.argv;
 var userParameter = "";
 for (var i = 2; i < nodeArgs.length; i++) {
     if (i > 2 && i < nodeArgs.length) {
-        userParameter = userParameter+ "+" +nodeArgs[i];
+        userParameter = userParameter + "+" + nodeArgs[i];
     }
 }
-// var userParameter = process.argv[3];
-var moment = require("moment");
-moment().format();
 
 userInput(userOption, userParameter);
 
-//Functions
+//Switch statement
 function userInput(userOption, userParameter) {
     switch (userOption) {
         case "concert-this":
@@ -40,7 +39,7 @@ function userInput(userOption, userParameter) {
             console.log("Ah ah ah, you didn't say the magic word...")
     }
 }
-
+//movie function
 function movieInfo(userParameter) {
     if (!userParameter) {
         userParameter = "Mr.Nobody";
@@ -56,10 +55,32 @@ function movieInfo(userParameter) {
             "\nLanguage: " + response.data.Language +
             "\nPlot: " + response.data.Plot +
             "\nActors/Actresses: " + response.data.Actors;
-            console.log(movieResults);
+        console.log(movieResults);
+        fs.appendFileSync("log.txt", "===================");
+        fs.appendFileSync("log.txt", movieResults);
+    })
+        .catch(function (error) {
+            console.log(error);
+        });
+};
+//concert function
+function concertInfo(userParameter) {
+    if (!userParameter) {
+        userParameter = "ace of base"
+    }
+    axios.get("https://rest.bandsintown.com/artists/" + userParameter + "/events?app_id=codingbootcamp").then(function (response) {
+        for (var i = 0; i < response.data.length; i++) {
+            var concertResults =
+                "===========================" +
+                "\nVenue Name: " + response.data[i].venue.name +
+                "\nVenue Location: " + response.data[i].venue.city +
+                "\nDate of the Event: " + response.data[i].datetime;
+            console.log(concertResults);
+            fs.appendFileSync("log.txt", "===================");
+            fs.appendFileSync("log.txt", concertResults);
+        }
     })
     .catch(function (error) {
         console.log(error);
     });
-};
-
+}
