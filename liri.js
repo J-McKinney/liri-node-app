@@ -8,14 +8,21 @@ var keys = require("./keys.js");
 var axios = require("axios");
 var fs = require("fs");
 var userOption = process.argv[2];
-var userParameter = process.argv[3];
+var nodeArgs = process.argv;
+var userParameter = "";
+for (var i = 2; i < nodeArgs.length; i++) {
+    if (i > 2 && i < nodeArgs.length) {
+        userParameter = userParameter+ "+" +nodeArgs[i];
+    }
+}
+// var userParameter = process.argv[3];
 var moment = require("moment");
 moment().format();
 
 userInput(userOption, userParameter);
 
 //Functions
-function userInput(userOption, userParameters) {
+function userInput(userOption, userParameter) {
     switch (userOption) {
         case "concert-this":
             concertInfo(userParameter);
