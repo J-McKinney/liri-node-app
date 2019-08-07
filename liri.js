@@ -3,21 +3,23 @@ require("dotenv").config();
 
 //variables
 var keys = require("./keys");
-var spotify = new spotify(keys.spotify);
 var Spotify = require("node-spotify-api");
+var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
 var fs = require("fs");
 var moment = require("moment");
 moment().format();
 var userOption = process.argv[2];
-var userParameter = process.argv[3];
-// var nodeArgs = process.argv;
-// var userParameter = "";
-// for (var i = 2; i < nodeArgs.length; i++) {
-//     if (i > 2 && i < nodeArgs.length) {
-//         userParameter = userParameter +"+"+ nodeArgs[i];
-//     }
-// }
+var modifiedArray = [];
+for (let i = 2; i < process.argv.length; i++) {
+    modifiedArray.push(process.argv[i]);
+}
+var com = modifiedArray[0];
+var parameterArray = [];
+for(let i = 1; i < modifiedArray.length; i++){
+    parameterArray.push(modifiedArray[i]);
+}
+var userParameter = parameterArray.join("+");
 
 userInput(userOption, userParameter);
 
@@ -28,7 +30,7 @@ function userInput(userOption, userParameter) {
         case "concert-this":
             concertInfo(userParameter);
             break;
-        case "spotify-this-song":
+        case "spotify-this":
             songInfo(userParameter);
             break;
         case "movie-this":
@@ -43,13 +45,6 @@ function userInput(userOption, userParameter) {
 }
 //movie function
 function movieInfo(userParameter) {
-    var nodeArgs = process.argv;
-    userParameter = "";
-    for (var i = 2; i < nodeArgs.length; i++) {
-        if (i > 2 && i < nodeArgs.length) {
-            userParameter = userParameter + "+" + nodeArgs[i];
-        }
-    }
     if (!userParameter) {
         userParameter = "Mr.Nobody";
     }
@@ -77,9 +72,7 @@ function concertInfo(userParameter) {
     if (!userParameter) {
         userParameter = "guns n' roses";
     }
-    // var queryURL = ("https://rest.bandsintown.com/artists/" + userParameter + "/events?app_id=codingbootcamp");
     axios.get("https://rest.bandsintown.com/artists/" + userParameter + "/events?app_id=codingbootcamp").then(function (response) {
-        // var data = response.data;
         for (var i = 0; i < response.data.length; i++) {
             var concertResults =
                 "\n===========================" +
@@ -94,10 +87,10 @@ function concertInfo(userParameter) {
         console.log(error);
     })
 }
-
+//spotify function
 function songInfo(userParameter) {
-    if(!value){
-        value = "The Sign";
+    if(!userParameter){
+        userParameter = "The Sign";
     }
     spotify.search({ type: 'track', query: userParameter }).then(function(response) {
         for (var i = 0; i < 5; i++) {
