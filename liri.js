@@ -73,11 +73,12 @@ function concertInfo(userParameter) {
     }
     axios.get("https://rest.bandsintown.com/artists/" + userParameter + "/events?app_id=codingbootcamp").then(function (response) {
         for (var i = 0; i < response.data.length; i++) {
+            var momentTime = moment(response.data[i].datetime).format("MM/DD/YYYY HH:mm")
             var concertResults =
                 "\n==============================" +
                 "\nVenue Name: " + response.data[i].venue.name +
                 "\nVenue Location: " + response.data[i].venue.city +
-                "\nDate of the Event: " + response.data[i].datetime;
+                "\nDate of the Event: " + momentTime;
             console.log(concertResults);
             fs.appendFileSync("log.txt", concertResults);
         }

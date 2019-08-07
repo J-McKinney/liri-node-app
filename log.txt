@@ -24,3 +24,164 @@ Artist(s): Backstreet Boys
 Song Name: I Want It That Way
 Album Name: The Hits--Chapter One
 Preview Link: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=165a639b0bff4c8e97ecdb61e7c3d31f
+
+==============================
+Venue Name: Performance Pavilion at Sweetwater
+Venue Location: Fort Wayne
+Date of the Event: 08/07/2019
+==============================
+Venue Name: Stir Cove
+Venue Location: Council Bluffs
+Date of the Event: 08/09/2019
+==============================
+Venue Name: KSHE Pig Roast
+Venue Location: Maryland Heights
+Date of the Event: 08/10/2019
+==============================
+Venue Name: The Tabernacle - GA
+Venue Location: Atlanta
+Date of the Event: 08/12/2019
+==============================
+Venue Name: Hard Rock Live Orlando
+Venue Location: Orlando
+Date of the Event: 08/13/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Charlotte
+Date of the Event: 09/25/2019
+==============================
+Venue Name: Guns N' Roses at Louder Than Life Festival
+Venue Location: Louisville
+Date of the Event: 09/28/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Jacksonville
+Date of the Event: 10/01/2019
+==============================
+Venue Name: Guns N' Roses at Austin City Limits Festival
+Venue Location: Austin
+Date of the Event: 10/04/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Wichita
+Date of the Event: 10/07/2019
+==============================
+Venue Name: Guns N' Roses at Austin City Limits Festival
+Venue Location: Austin
+Date of the Event: 10/11/2019
+==============================
+Venue Name: Guns N' Roses at Exit 111 Festival
+Venue Location: Manchester
+Date of the Event: 10/13/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Lincoln
+Date of the Event: 10/15/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Guadalajara
+Date of the Event: 10/18/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Tijuana
+Date of the Event: 10/20/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Oklahoma City
+Date of the Event: 10/23/2019
+==============================
+Venue Name: Guns N' Roses at Voodoo Music Festival
+Venue Location: New Orleans
+Date of the Event: 10/25/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Salt Lake City
+Date of the Event: 10/29/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Las Vegas
+Date of the Event: 11/01/2019
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Las Vegas
+Date of the Event: 11/02/2019
+==============================
+Venue Name: Performance Pavilion at Sweetwater
+Venue Location: Fort Wayne
+Date of the Event: 08/07/2019 19:00
+==============================
+Venue Name: Stir Cove
+Venue Location: Council Bluffs
+Date of the Event: 08/09/2019 19:00
+==============================
+Venue Name: KSHE Pig Roast
+Venue Location: Maryland Heights
+Date of the Event: 08/10/2019 19:00
+==============================
+Venue Name: The Tabernacle - GA
+Venue Location: Atlanta
+Date of the Event: 08/12/2019 19:00
+==============================
+Venue Name: Hard Rock Live Orlando
+Venue Location: Orlando
+Date of the Event: 08/13/2019 19:00
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Charlotte
+Date of the Event: 09/25/2019 19:30
+==============================
+Venue Name: Guns N' Roses at Louder Than Life Festival
+Venue Location: Louisville
+Date of the Event: 09/28/2019 12:00
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Jacksonville
+Date of the Event: 10/01/2019 19:30
+==============================
+Venue Name: Guns N' Roses at Austin City Limits Festival
+Venue Location: Austin
+Date of the Event: 10/04/2019 12:00
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Wichita
+Date of the Event: 10/07/2019 19:30
+==============================
+Venue Name: Guns N' Roses at Austin City Limits Festival
+Venue Location: Austin
+Date of the Event: 10/11/2019 12:00
+==============================
+Venue Name: Guns N' Roses at Exit 111 Festival
+Venue Location: Manchester
+Date of the Event: 10/13/2019 12:00
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Lincoln
+Date of the Event: 10/15/2019 19:30
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Guadalajara
+Date of the Event: 10/18/2019 17:00
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Tijuana
+Date of the Event: 10/20/2019 19:30
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Oklahoma City
+Date of the Event: 10/23/2019 19:30
+==============================
+Venue Name: Guns N' Roses at Voodoo Music Festival
+Venue Location: New Orleans
+Date of the Event: 10/25/2019 12:00
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Salt Lake City
+Date of the Event: 10/29/2019 19:30
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Las Vegas
+Date of the Event: 11/01/2019 20:00
+==============================
+Venue Name: Guns N' Roses: Not In This Lifetime Tour
+Venue Location: Las Vegas
+Date of the Event: 11/02/2019 20:00
