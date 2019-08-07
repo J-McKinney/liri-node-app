@@ -37,10 +37,10 @@ function userInput(userOption, userParameter) {
             movieInfo(userParameter);
             break;
         case "do-what-it-says":
-            someInfo();
+            someInfo(userParameter);
             break;
         default:
-            console.log("Ah ah ah, you didn't say the magic word...")
+        console.log("Ah ah ah, you didn't say the magic word... \n Try concert-this, spotify-this, movie-this, or do-what-it-says")
     }
 }
 //movie function
@@ -50,7 +50,7 @@ function movieInfo(userParameter) {
     }
     axios.get("http://www.omdbapi.com/?t=" + userParameter + "&y=&plot=short&apikey=trilogy").then(function (response) {
         var movieResults =
-            "\n======================" +
+            "\n==============================" +
             "\nMovie Title: " + response.data.Title +
             "\nYear of Release: " + response.data.Year +
             "\nIMDB Rating: " + response.data.imdbRating +
@@ -60,7 +60,6 @@ function movieInfo(userParameter) {
             "\nPlot: " + response.data.Plot +
             "\nActors/Actresses: " + response.data.Actors;
         console.log(movieResults);
-        fs.appendFileSync("log.txt", "\n===================");
         fs.appendFileSync("log.txt", movieResults);
     })
         .catch(function (error) {
@@ -75,12 +74,11 @@ function concertInfo(userParameter) {
     axios.get("https://rest.bandsintown.com/artists/" + userParameter + "/events?app_id=codingbootcamp").then(function (response) {
         for (var i = 0; i < response.data.length; i++) {
             var concertResults =
-                "\n===========================" +
+                "\n==============================" +
                 "\nVenue Name: " + response.data[i].venue.name +
                 "\nVenue Location: " + response.data[i].venue.city +
                 "\nDate of the Event: " + response.data[i].datetime;
             console.log(concertResults);
-            fs.appendFileSync("log.txt", "\n===================");
             fs.appendFileSync("log.txt", concertResults);
         }
     }).catch(function (error) {
@@ -95,16 +93,27 @@ function songInfo(userParameter) {
     spotify.search({ type: 'track', query: userParameter }).then(function(response) {
         for (var i = 0; i < 5; i++) {
             var spotifyResults = 
-                "\n===================================" +
+                "\n==============================" +
                     "\nArtist(s): " + response.tracks.items[i].artists[0].name + 
                     "\nSong Name: " + response.tracks.items[i].name +
                     "\nAlbum Name: " + response.tracks.items[i].album.name +
                     "\nPreview Link: " + response.tracks.items[i].preview_url;
                     
             console.log(spotifyResults);
+            fs.appendFileSync("log.txt", spotifyResults);
         }
     })
     .catch(function(err) {
         console.log(err);
     });
+}
+// do-what-it-says function
+function someInfo(){
+	fs.readFile('random.txt', 'utf8', function(err, data){
+		if (err){ 
+			return console.log(err);
+		}
+        var dataArr = data.split(',');
+        userInput(dataArr[0], dataArr[1]);
+	});
 }
